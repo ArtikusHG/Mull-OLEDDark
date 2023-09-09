@@ -7,8 +7,10 @@ jobs:
       - name: Install dependencies
         run: |
             sudo apt update
-            sudo apt install -y jq wget apktool aapt zipalign apksigner
-            sudo pip3 install aapt2
+            sudo apt install -y jq wget apktool zipalign apksigner
+            wget -q https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.8.1.jar -O apktool.jar
+            wget -q https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool
+            chmod +x apktool*
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Run build script
