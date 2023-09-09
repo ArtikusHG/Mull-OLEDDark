@@ -15,7 +15,7 @@ pwd
 
 echo "Decompiling and patching apk file..."
 rm -rf patched patched_signed.apk
-apktool d -f -r -s latest.apk -o patched 
+apktool d -s latest.apk -o patched 
 rm -rf patched/META-INF
 
 sed -i 's/<color name="fx_mobile_layer_color_1">.*/<color name="fx_mobile_layer_color_1">@color\/photonBlack<\/color>/g' patched/res/values-night/colors.xml
