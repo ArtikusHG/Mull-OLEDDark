@@ -20,7 +20,7 @@ jobs:
           ./build.sh
           echo "${{ secrets.KEYSTORE }}" | base64 -di > keystore.jks
           apksigner sign --ks keystore.jks --ks-pass pass:${{ secrets.KEYSTORE_PASSPHRASE }} patched_signed.apk
-          echo "BUILD_VERSION=$(curl -s https://divestos.org/fdroid/official/index-v1.json | jq -r '.packages.\"us.spotco.fennec_dos\"[0].versionName')" >> $GITHUB_ENV
+          echo "BUILD_VERSION=$(curl -s https://divestos.org/fdroid/official/index-v1.json | jq -r '.packages."us.spotco.fennec_dos"[0].versionName')" >> $GITHUB_ENV
       - name: Publish release
         uses: softprops/action-gh-release@v1
         with:
