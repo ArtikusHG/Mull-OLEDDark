@@ -1,5 +1,5 @@
 name: build apk
-on: [push]
+on: [manually]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,6 +20,7 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: test_release
           files: ${{ github.workspace }}/patched_signed.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
