@@ -23,5 +23,5 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ $(curl -s https://divestos.org/fdroid/official/index-v1.json | jq -r '.packages."us.spotco.fennec_dos"[0].versionName') }}
+          tag_name: ${{ env.BUILD_VERSION }}
           files: ${{ github.workspace }}/patched_signed.apk
