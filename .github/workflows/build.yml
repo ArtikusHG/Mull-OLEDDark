@@ -1,0 +1,17 @@
+name: build apk
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+            apt update
+            apt install -y jq wget apktool zipalign apksigner
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Run build script
+        run: |
+          cd ${{ github.workspace }}
+          ./build.sh
+      - run: echo "To be continued..."
