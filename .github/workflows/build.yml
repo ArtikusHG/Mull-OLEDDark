@@ -15,4 +15,5 @@ jobs:
           cd ${{ github.workspace }}
           chmod +x ./build.sh
           ./build.sh
-      - run: echo "To be continued..."
+          echo "${{ secrets.KEYSTORE }}" | base64 -di > keystore.jks
+          apksigner sign --ks keystore.jks --ks-pass pass:${{ secrets.KEYSTORE_PASSPHRASE }} patched_signed.apk
