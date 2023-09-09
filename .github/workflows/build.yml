@@ -1,5 +1,6 @@
 name: build apk
 on:
+  workflow_dispatch:
   schedule:
     - cron: '00 0 * * *'
 jobs:
