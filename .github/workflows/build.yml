@@ -13,6 +13,6 @@ jobs:
       - name: Run build script
         run: |
           cd ${{ github.workspace }}
-          chmox +x ./build.sh
+          chmod +x ./build.sh
           ./build.sh
       - run: echo "To be continued..."
