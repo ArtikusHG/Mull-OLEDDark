@@ -10,6 +10,9 @@ apk=$(echo $data | jq -r '.packages."us.spotco.fennec_dos"[0].apkName')
 echo "https://divestos.org/fdroid/official/$apk"
 wget $(echo "https://divestos.org/fdroid/official/$apk") -O latest.apk
 
+ls
+pwd
+
 echo "Decompiling and patching apk file..."
 rm -rf patched patched_signed.apk
 apktool d -s $1 -o patched 
