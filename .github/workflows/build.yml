@@ -17,3 +17,9 @@ jobs:
           ./build.sh
           echo "${{ secrets.KEYSTORE }}" | base64 -di > keystore.jks
           apksigner sign --ks keystore.jks --ks-pass pass:${{ secrets.KEYSTORE_PASSPHRASE }} patched_signed.apk
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Build apk
+          path: ${{ github.workspace }}/patched_signed.apk
+          retention-days: 5
