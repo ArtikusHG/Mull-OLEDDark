@@ -7,7 +7,7 @@ jobs:
       - name: Install dependencies
         run: |
             sudo apt update
-            sudo apt install -y jq wget apktool zipalign apksigner
+            sudo apt install -y jq wget apktool aapt zipalign apksigner
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Run build script
