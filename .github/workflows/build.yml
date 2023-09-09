@@ -21,8 +21,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: test_release
-          body: testing
           files: ${{ github.workspace }}/patched_signed.apk
-          token: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
