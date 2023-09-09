@@ -1,5 +1,5 @@
 name: build apk
-on: [manually]
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
