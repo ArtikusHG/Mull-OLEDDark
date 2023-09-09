@@ -11,9 +11,7 @@ rm -rf patched/META-INF
 sed -i 's/<color name="fx_mobile_layer_color_1">.*/<color name="fx_mobile_layer_color_1">@color\/photonBlack<\/color>/g' patched/res/values-night/colors.xml
 sed -i 's/<color name="fx_mobile_layer_color_2">.*/<color name="fx_mobile_layer_color_2">@color\/photonDarkGrey90<\/color>/g' patched/res/values-night/colors.xml
 
-aapt2 compile --dir /home/runner/work/Mull-OLEDDark/Mull-OLEDDark/patched/res --legacy -o resources.zip
-
-#apktool b patched -o patched.apk -a /usr/bin/aapt2
+apktool b patched -o patched.apk --use-aapt2 -p ./tmp
 
 echo "Aligning apk file..."
 zipalign 4 patched.apk patched_signed.apk
