@@ -1,4 +1,6 @@
 # Ironfox-OLEDDark (previously Mull-OLEDDark)
+Mull is no longer maintained, this now uses Ironfox as the base. All releases starting from 134.0.1 are Ironfox-based.
+
 Since Firefox mobile (and thus, all of its forks) don't officially support an OLED dark theme, I decided to take matter into my own hands, and made a simple script that decompiles the apk, changes two lines in the resources to change the color scheme, and rebuilds the apk. This is an attempt to automate the entire process - this action will run every 24 hours, and if it finds a new build of Mull, it will download it, patch it, and publish a release.
 
 # Why not build Ironfox from source?
